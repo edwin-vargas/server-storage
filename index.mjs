@@ -9,6 +9,7 @@ app.use(cors());
 
 // Root endpoint
 app.get('/', (req, res) => {
+    console.log('Connection secure')
     res.send('Hello, World!');
 });
 
