@@ -3,7 +3,7 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const multer = require('multer');
-const PORT = process.env.PORT ?? 1234
+const PORT = process.env.PORT ?? 80
 const publicDirectoryPath = path.join(__dirname, 'client')
 
 
