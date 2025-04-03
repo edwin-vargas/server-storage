@@ -16,7 +16,13 @@ app.use(cors({
     origin: (origin, callback) => {
       const ACCEPTED_ORIGINS = [
         'http://localhost:8080',
-        'http://localhost:1234'
+        'http://localhost:1234',
+        '149.19.169.11:3000',
+        '149.19.169.11', 
+        'http://192.168.106.177:3000',
+        'http://192.168.106.177'
+
+        
       ]
   
       if (ACCEPTED_ORIGINS.includes(origin)) {
@@ -48,9 +54,6 @@ filename: (req, file, cb) => {
 const upload = multer({ storage: storage });
 
 //API
-app.get("/", (req, res) => {
-  res.sendFile(path.join(publicDirectoryPath, "index.html"));
-});
 
 app.post("/upload", upload.single("file"), (req, res) => {
     try {
